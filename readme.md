@@ -21,5 +21,15 @@ Simples documentos web creados con html y sass. Ademàs de ello, se implementò 
 - Mixins and Extends
 - Semantic for the presentation (colors, margin, etc)
 
+## Metodologías CSS
+- BEM
+
+## WebComponents
+- NavBar
+- Slider
+- Jump Bottron
+- CardViews
+- GridColumn
+
 ## Propósito de este repo
 Dar a conocer aspectos fundamentales sobre el layout css para crear pequeñas y simples interfaces web antes de continuar con el backend como : Flask, Express in NodeJS, Laravel, SpringBoot y otros frameworks más.
