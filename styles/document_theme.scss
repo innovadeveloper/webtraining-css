@@ -1,0 +1,138 @@
+@import 'fonts';
+$fontDescriptionColor: black;
+$fontTitleColor: red;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+}
+
+p {
+    color: $fontDescriptionColor;
+    font-family: $caviarDream;
+    &.padding-zero {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+h2 {
+    font-family: $caviarDreamBold;
+    color: $fontTitleColor;
+    /* margin-bottom: 0px; */
+    /* border: 2px solid black; */
+    /* border-style: dashed; */
+}
+
+// pàrrafos
+.title-center {
+    padding: 10px;
+    // border: 2px solid red;
+    display: flex;
+    justify-content: center;
+}
+
+#firstParagraph::first-letter {
+    color: $fontTitleColor;
+    font-size: 2.5rem;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    line-height: normal;
+}
+
+// tripe columna
+p {
+    &.column {
+        float: left;
+        width: 33%;
+        display: inline;
+        padding-left: 0.5em;
+    }
+}
+
+img {
+    &.body-content__picture {
+        float: none;
+        // width: 200px;
+        justify-content: center;
+        width: 70%;
+        display: block;
+        margin: 0px auto;
+        margin-bottom: 1rem;
+    }
+}
+
+// utilities
+.block__border-dashed {
+    border: 2px solid rebeccapurple;
+    border-style: dashed;
+}
+
+.block__border-graylight {
+    border: 1px solid lightgray;
+}
+
+// flex columns
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+// nowrap is default value..
+.nowrap {
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+.flex-item {
+    // padding: 10px;
+    padding-top: 1rem;
+    font-family: $caviarDream;
+}
+
+.footer-component__button-index {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+// first mobile
+@media only screen and (min-width: 600px) {
+    body {
+        // background-color: lightblue;
+    }
+    // .flex-container {
+    //     flex-direction: column;
+    // }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        // background-color: yellow;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    body {
+        // background-color: rgb(106, 103, 255);
+    }
+    img {
+        &.body-content__picture {
+            float: left;
+            margin-right: 1rem;
+        }
+    }
+    .flex-container {
+        flex-direction: row;
+    }
+    .flex-item {
+        padding: 10px;
+    }
+}

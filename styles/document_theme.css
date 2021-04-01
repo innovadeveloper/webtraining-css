@@ -1,0 +1,129 @@
+@font-face {
+  font-family: CaviarDream;
+  src: url(../assets/fonts/caviar_dreams/CaviarDreams.ttf);
+}
+
+@font-face {
+  font-family: CaviarDreamBold;
+  src: url(../assets/fonts/caviar_dreams/CaviarDreams_Bold.ttf);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+}
+
+p {
+  color: black;
+  font-family: CaviarDream;
+}
+
+p.padding-zero {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-family: CaviarDreamBold;
+  color: red;
+  /* margin-bottom: 0px; */
+  /* border: 2px solid black; */
+  /* border-style: dashed; */
+}
+
+.title-center {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#firstParagraph::first-letter {
+  color: red;
+  font-size: 2.5rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  line-height: normal;
+}
+
+p.column {
+  float: left;
+  width: 33%;
+  display: inline;
+  padding-left: 0.5em;
+}
+
+img.body-content__picture {
+  float: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70%;
+  display: block;
+  margin: 0px auto;
+  margin-bottom: 1rem;
+}
+
+.block__border-dashed {
+  border: 2px solid rebeccapurple;
+  border-style: dashed;
+}
+
+.block__border-graylight {
+  border: 1px solid lightgray;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.nowrap {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.flex-item {
+  padding-top: 1rem;
+  font-family: CaviarDream;
+}
+
+.footer-component__button-index {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+@media only screen and (min-width: 992px) {
+  img.body-content__picture {
+    float: left;
+    margin-right: 1rem;
+  }
+  .flex-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .flex-item {
+    padding: 10px;
+  }
+}
+/*# sourceMappingURL=document_theme.css.map */

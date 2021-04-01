@@ -1,0 +1,120 @@
+@import 'fonts';
+$fontDescriptionColor: black;
+$fontTitleColor: red;
+
+// size of mediaqueries..
+$phoneSize: 600px;
+$tabletSize: 768px;
+$desktopSize: 992px;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+}
+
+h2, span, a {
+    font-family: $caviarDreamBold;
+    color: $fontTitleColor;
+}
+
+// pàrrafos
+.title-center {
+    padding: 10px;
+    // border: 2px solid red;
+    display: flex;
+    justify-content: center;
+}
+
+.title-text__dark{
+    color: black;
+}
+
+.title-text__green{
+    color: green;
+}
+
+.title-text__light{
+    font-family: $caviarDream;
+}
+
+// utilities
+.block__border-dashed {
+    border: 2px solid rebeccapurple;
+    border-style: dashed;
+}
+.block__border-hide{
+    border: 0px;
+}
+.block__border-show{
+    border: 2px;
+}
+
+.block__border-graylight {
+    border: 1px solid lightgray;
+}
+
+// // flex columns
+.flex-container {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+// // nowrap is default value..
+// .nowrap {
+//     -webkit-flex-wrap: nowrap;
+//     flex-wrap: nowrap;
+// }
+
+// .flex-item {
+//     // padding: 10px;
+//     padding-top: 1rem;
+//     font-family: $caviarDream;
+// }
+
+// .footer-component__button-index {
+//     position: fixed;
+//     bottom: 2rem;
+//     right: 2rem;
+// }
+
+.content-menu__page-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100vh;
+    // background-color: black;
+}
+
+// first mobile
+@media only screen and (min-width: $phoneSize) {
+    // body {
+    //     background-color: lightblue;
+    // }
+    // .flex-container {
+    //     flex-direction: column;
+    // }
+}
+
+@media only screen and (min-width: $tabletSize) {
+    // body {
+    //     background-color: yellow;
+    // }
+}
+
+@media only screen and (min-width: $desktopSize) {
+    // body {
+    //     background-color: rgb(106, 103, 255);
+    // }
+    .flex-container {
+        flex-direction: row;
+    }
+    .flex-item {
+        padding: 10px;
+    }
+}

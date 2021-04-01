@@ -1,0 +1,100 @@
+@font-face {
+  font-family: CaviarDream;
+  src: url(../assets/fonts/caviar_dreams/CaviarDreams.ttf);
+}
+
+@font-face {
+  font-family: CaviarDreamBold;
+  src: url(../assets/fonts/caviar_dreams/CaviarDreams_Bold.ttf);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+}
+
+h2, span, a {
+  font-family: CaviarDreamBold;
+  color: red;
+}
+
+.title-center {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.title-text__dark {
+  color: black;
+}
+
+.title-text__green {
+  color: green;
+}
+
+.title-text__light {
+  font-family: CaviarDream;
+}
+
+.block__border-dashed {
+  border: 2px solid rebeccapurple;
+  border-style: dashed;
+}
+
+.block__border-hide {
+  border: 0px;
+}
+
+.block__border-show {
+  border: 2px;
+}
+
+.block__border-graylight {
+  border: 1px solid lightgray;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-menu__page-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+@media only screen and (min-width: 992px) {
+  .flex-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .flex-item {
+    padding: 10px;
+  }
+}
+/*# sourceMappingURL=theme.css.map */
