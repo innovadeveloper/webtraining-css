@@ -33,7 +33,11 @@
                 </button>
                 <span class="align-self-center">Navs</span>
             </nav>
-            <article id="main-content__article" class="block__border-dashed">Article</article>
+            <article id="main-content__article" class="block__border-dashed">
+                <button id="btn-sidebar-toogle" type="button" class="btn btn-outline-dark">
+                <i class="fas fa-align-left"></i>
+                </button>
+                <span class="align-self-center">Article</span></article>
         </section>
         <!-- <div>Ads</div> -->
         <footer class="block__border-dashed">Footer</footer>
@@ -44,6 +48,13 @@
     <script>
         $(document).ready(function() {
             $('#btn-sidebar-collapser').on('click', function() {
+                // $('.overlay').removeClass('active');
+                $('#main-content__sidebar').addClass('active');
+                $('#main-content__article').addClass('active');
+                console.log("click");
+            });
+
+            $('#btn-sidebar-toogle').on('click', function() {
                 // $('#sidebar').toggleClass('active');
                 $('#main-content__sidebar').toggleClass('active');
                 $('#main-content__article').toggleClass('active');

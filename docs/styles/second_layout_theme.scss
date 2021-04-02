@@ -30,7 +30,7 @@ header {
     flex-direction: column;
 }
 
-nav {
+#main-content__sidebar {
     @include content-center();
     // height: 100%;
     height: 60px;
@@ -40,10 +40,14 @@ nav {
     }
 }
 
-article {
+#main-content__article {
     @include content-center();
     width: 100%;
-    height: 100%
+    height: 100%;
+
+    #btn-sidebar-toogle {
+        display: none;
+    }
 }
 
 footer {
@@ -81,7 +85,7 @@ footer {
         display: flex;
         flex-direction: row;
     }
-    nav {
+    #main-content__sidebar {
         @include content-center();
         height: 100%;
         width: 20%;
@@ -97,10 +101,17 @@ footer {
             margin-left: -20%;
         }
     }
-    article {
+    #main-content__article {
         @include content-center();
+        position: relative;
         width: 80%;
         transition: all 0.3s;
+        #btn-sidebar-toogle {
+            display: block;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
         &.active{
             width: 100%;
         }
