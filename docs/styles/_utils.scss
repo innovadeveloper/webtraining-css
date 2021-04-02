@@ -1,0 +1,23 @@
+// utilities
+.block__border-dashed {
+    border: 2px solid rebeccapurple;
+    border-style: dashed;
+}
+
+.block__border-hide {
+    border: 0px;
+}
+
+.block__border-show {
+    border: 2px;
+}
+
+.block__border-graylight {
+    border: 1px solid lightgray;
+}
+
+@mixin content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
