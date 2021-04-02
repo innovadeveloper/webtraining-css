@@ -1,0 +1,113 @@
+@font-face {
+  font-family: CaviarDream;
+  src: url(../assets/fonts/caviar_dreams/CaviarDreams.ttf);
+}
+
+@font-face {
+  font-family: CaviarDreamBold;
+  src: url(../assets/fonts/caviar_dreams/CaviarDreams_Bold.ttf);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  background-color: white;
+  height: 100%;
+}
+
+h2, span, a {
+  font-family: CaviarDreamBold;
+}
+
+.title-center {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.title-text__dark {
+  color: black;
+}
+
+.title-text__green {
+  color: green;
+}
+
+.title-text__light {
+  font-family: CaviarDream;
+}
+
+.main-content__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+#main-section__sidebar {
+  min-width: 200px;
+  max-width: 200px;
+  background-color: lightblue;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 999;
+}
+
+#main-section__sidebar.active {
+  margin-left: -200px;
+}
+
+#main-section__sidebar ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+}
+
+#main-section__body-content {
+  width: calc(100% - 200px);
+  height: 100vh;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  left: 200px;
+}
+
+#main-section__body-content.active {
+  width: 100%;
+  left: 0;
+}
+
+.placeholder-section__box {
+  height: 300%;
+  width: 100%;
+  background-color: aquamarine;
+}
+
+@media only screen and (min-width: 992px) {
+  .flex-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .flex-item {
+    padding: 10px;
+  }
+}
+/*# sourceMappingURL=draft_theme.css.map */
