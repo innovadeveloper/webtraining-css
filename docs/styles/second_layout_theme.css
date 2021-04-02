@@ -143,12 +143,17 @@ footer {
     height: 100%;
     width: 20%;
     position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
   nav #btn-sidebar-collapser {
     display: block;
     position: absolute;
     top: 1rem;
     right: 1rem;
+  }
+  nav.active {
+    margin-left: -20%;
   }
   article {
     display: -webkit-box;
@@ -161,6 +166,11 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     width: 80%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  article.active {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=second_layout_theme.css.map */
