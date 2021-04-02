@@ -1,0 +1,111 @@
+@import 'fonts';
+@import 'variables';
+$fontDescriptionColor: black;
+$fontTitleColor: red;
+
+@mixin content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: $caviarDream;
+}
+
+// utilities
+.block__border-dashed {
+    border: 2px solid rebeccapurple;
+    border-style: dashed;
+}
+
+.block__border-hide {
+    border: 0px;
+}
+
+.block__border-show {
+    border: 2px;
+}
+
+.block__border-graylight {
+    border: 1px solid lightgray;
+}
+
+header {
+    @include content-center();
+    height: 60px;
+}
+
+.main-content__structure {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    // background-color: yellow;
+}
+
+.main-content__body-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    @include content-center();
+    // height: 100%;
+    height: 60px;
+    width: 100%;
+}
+
+article {
+    @include content-center();
+    width: 100%;
+    height: 100%
+}
+
+
+footer {
+    @include content-center();
+    height: 60px;
+}
+
+// first mobile
+@media only screen and (min-width: $phoneSize) {
+    body {
+        // background-color: lightblue;
+    }
+    // .flex-container {
+    //     flex-direction: column;
+    // }
+}
+
+@media only screen and (min-width: $tabletSize) {
+    body {
+        // background-color: yellow;
+    }
+}
+
+@media only screen and (min-width: $desktopSize) {
+    body {
+        // background-color: rgb(106, 103, 255);
+    }
+
+    .main-content__body-section {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+    }
+    nav {
+        @include content-center();
+        height: 100%;
+        width: 20%;
+    }
+    
+    article {
+        @include content-center();
+        width: 80%;
+    }
+}

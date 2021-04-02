@@ -1,11 +1,7 @@
 @import 'fonts';
+@import 'variables';
 $fontDescriptionColor: black;
 $fontTitleColor: red;
-
-// size of mediaqueries..
-$phoneSize: 600px;
-$tabletSize: 768px;
-$desktopSize: 992px;
 
 * {
     box-sizing: border-box;
