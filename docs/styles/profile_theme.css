@@ -33,6 +33,9 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 body {
@@ -42,6 +45,21 @@ body {
 
 header {
   height: 60px;
+}
+
+.section-text_title {
+  font-size: 2rem;
+  font-family: CaviarDreamBold;
+}
+
+.section-text_sub-title {
+  font-size: 1.3rem;
+  font-family: CaviarDreamBold;
+}
+
+.section-text_sub-title-two {
+  font-size: 1rem;
+  font-family: CaviarDreamBold;
 }
 
 .main-content__body-section {
@@ -91,6 +109,16 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   height: 60px;
+}
+
+.section__subtitle-line {
+  width: 5rem;
+  border: 1px solid rgba(83, 0, 91, 0.961);
+  margin: 10px 0px;
+}
+
+.bg-primary {
+  background-color: rgba(203, 0, 222, 0.961) !important;
 }
 
 @media only screen and (min-width: 768px) {

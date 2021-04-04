@@ -3,8 +3,14 @@
 @import 'utils';
 $fontDescriptionColor: black;
 $fontTitleColor: red;
+$colorPrimary : rgba(203, 0, 222, 0.961);
+$darkColorPrimary : rgba(83, 0, 91, 0.961);
+
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 body {
@@ -18,6 +24,20 @@ header {
     height: 60px;
 }
 
+.section-text_title {
+    font-size: 2rem;
+    font-family: $caviarDreamBold;
+}
+
+.section-text_sub-title {
+    font-size: 1.3rem;
+    font-family: $caviarDreamBold;
+}
+
+.section-text_sub-title-two {
+    font-size: 1rem;
+    font-family: $caviarDreamBold;
+}
 // .main-content__structure {
 //     // display: flex;
 //     // flex-direction: column;
@@ -55,6 +75,18 @@ footer {
     height: 60px;
 }
 
+.section__subtitle-line{
+    width: 5rem;
+    border: 1px solid $darkColorPrimary;
+    margin: 10px 0px;
+}
+
+// override
+
+.bg-primary{
+    // color: $colorPrimary;
+    background-color: $colorPrimary !important;
+}
 
 // #btn-sidebar-collapser{
 //     position: absolute;
