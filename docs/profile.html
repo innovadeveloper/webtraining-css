@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <div class="container-fluid main-content__structure">
+    <div class="container d-flex flex-column" style="height: 100vh;">
         <header class="block__border-dashed">
 
             <nav class="navbar navbar-expand-sm navbar-light bg-light block__border-dashed">
@@ -68,7 +68,38 @@
         </header>
         <section class="main-content__body-section">
             <article id="main-content__article" class="block__border-dashed">
-                <span class="align-self-center">Article</span></article>
+
+                <div class="row mx-0" style="height: 500px;">
+                    <div class="col-12 col-md-6">
+                        <div class="w-100 h-100 d-flex justify-content-center
+                        align-items-center
+                        block__border-dashed">
+                            <div class="text-center text-md-start">
+                                <span>Hello,</span>
+                                <h4>Kane Baltazar</h4>
+                                <span>a System Developer</span>
+                                <br>
+                                <button type="button" class="mt-2 btn btn-outline-dark btn-block">Contact me</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-none d-md-block">
+                        <div class="d-block h-100 d-flex justify-content-center
+                        align-items-center
+                        block__border-dashed">
+                        <!-- photo shadow and selfie..-->
+                            <div class="position-relative h-100 w-75">
+                                <img class="header-content__picture" src="assets/pictures/shadow_background@3x.png" alt="">
+                                <img class="header-content__picture" src="assets/pictures/person_photo@2x.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div id="header-content__photo-description" class="block__border-dashed bg-primary">
+                </div> -->
+
+            </article>
         </section>
         <footer class="block__border-dashed">Footer</footer>
     </div>

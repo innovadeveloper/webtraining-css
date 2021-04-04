@@ -38,22 +38,10 @@
 body {
   font-size: 16px;
   font-family: CaviarDream;
-  background-color: aqua;
 }
 
 header {
   height: 60px;
-}
-
-.main-content__structure {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100vh;
 }
 
 .main-content__body-section {
@@ -88,21 +76,8 @@ header {
 }
 
 #main-content__article {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   width: 100%;
   height: 100%;
-}
-
-#main-content__article #btn-sidebar-toogle {
-  display: none;
 }
 
 footer {
@@ -118,6 +93,15 @@ footer {
   height: 60px;
 }
 
+@media only screen and (min-width: 768px) {
+  img.header-content__picture {
+    position: absolute;
+    top: 15%;
+    height: 70%;
+    background-repeat: no-repeat;
+  }
+}
+
 @media only screen and (min-width: 992px) {
   .main-content__body-section {
     -webkit-box-flex: 1;
@@ -131,54 +115,12 @@ footer {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  #main-content__sidebar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 100%;
-    width: 20%;
-    position: relative;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  #main-content__sidebar #btn-sidebar-collapser {
-    display: block;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
-  #main-content__sidebar.active {
-    margin-left: -20%;
-  }
   #main-content__article {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: relative;
     width: 100%;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
   }
-  #main-content__article #btn-sidebar-toogle {
-    display: block;
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-  }
-  #main-content__article.active {
-    width: 100%;
+  img.header-content__picture {
+    height: 90%;
+    top: 0;
   }
 }
 /*# sourceMappingURL=profile_theme.css.map */
