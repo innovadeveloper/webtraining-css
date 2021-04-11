@@ -33,29 +33,42 @@ header {
 }
 
 
+// variables navbar
+$sideBarCollapsedWidth: 100px;
+$sideBarOpenedWidth: 250px;
+
 #main-content__sidebar {
     // @include content-center();
     height: 100%;
-    width: 10%;
+    width: $sideBarCollapsedWidth;
+    min-width: $sideBarCollapsedWidth;
     transition: all 0.3s;
     overflow: hidden;
     position: relative;
     // float: left;
     #btn-sidebar-collapser {
+        // display: block;
+        // position: absolute;
+        // bottom: 1rem;
+        // right: 1rem;
+    }
+    #div-sidebar-collapser{
         display: block;
+        width: 100%;
         position: absolute;
         bottom: 1rem;
-        right: 1rem;
     }
     &.active{
-        width: 0%;
+        width: 0px;
+        min-width: 0px;
     }
 }
 
 #main-content__article {
     @include content-center();
     position: relative;
-    width: 90%;
+    width: calc(100% - #{$sideBarCollapsedWidth});
+    min-width: calc(100% - #{$sideBarCollapsedWidth});
     transition: all 0.3s;
     #btn-sidebar-toogle {
         display: block;
@@ -63,31 +76,17 @@ header {
         top: 1rem;
         left: 1rem;
     }
+    #div
     &.active{
         width: 100%;
     }
 }
-
-// #main-content__article {
-//     @include content-center();
-//     width: 90%;
-//     height: 100%;
-
-//     // #btn-sidebar-toogle {
-//     //     display: none;
-//     // }
-// }
 
 footer {
     @include content-center();
     height: 60px;
 }
 
-// #btn-sidebar-collapser{
-//     position: absolute;
-//     top: 1rem;
-//     right: 1rem;
-// }
 // first mobile
 @media only screen and (min-width: $phoneSize) {
     body {
@@ -104,6 +103,9 @@ footer {
     }
 }
 
+
+// width: calc(100% - #{$sidebarWidth});
+
 @media only screen and (min-width: $desktopSize) {
     body {
         // background-color: rgb(106, 103, 255);
@@ -116,24 +118,27 @@ footer {
     #main-content__sidebar {
         // @include content-center();
         height: 100%;
-        width: 20%;
+        width: $sideBarOpenedWidth;
+        min-width: $sideBarOpenedWidth;
         position: relative;
         transition: all 0.3s;
         #btn-sidebar-collapser {
-            display: block;
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
+            // display: block;
+            // position: absolute;
+            // bottom: 1rem;
+            // right: 1rem;
         }
         &.active{
-            width: 10%;
+            width: $sideBarCollapsedWidth;
+            min-width: $sideBarCollapsedWidth;
             // margin-left: -10%;
         }
     }
     #main-content__article {
         @include content-center();
         position: relative;
-        width: 80%;
+        width: calc(100% - #{$sideBarOpenedWidth});
+        min-width: calc(100% - #{$sideBarOpenedWidth});
         transition: all 0.3s;
         #btn-sidebar-toogle {
             display: block;
@@ -142,7 +147,8 @@ footer {
             left: 1rem;
         }
         &.active{
-            width: 90%;
+            width: calc(100% - #{$sideBarCollapsedWidth});
+            min-width: calc(100% - #{$sideBarCollapsedWidth});
         }
     }
 }

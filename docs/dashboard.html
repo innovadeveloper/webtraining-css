@@ -26,11 +26,14 @@
 <body>
     <div class="container-fluid main-content__structure">
         <header class="block__border-dashed">Header</header>
+        <!-- body section : navbar and main_article -->
         <section class="main-content__body-section">
             <nav id="main-content__sidebar" class="block__border-dashed">
-                <button id="btn-sidebar-collapser" type="button" class="btn btn-outline-dark">
-                    <i class="fas fa-angle-left"></i>
-                </button>
+                <div id="div-sidebar-collapser" class="d-flex justify-content-center">
+                    <button id="btn-sidebar-collapser" type="button" class="btn btn-outline-dark mx-auto">
+                        <i class="fas fa-angle-left"></i>
+                    </button>
+                </div>
 
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -45,9 +48,7 @@
 
 
                     <li>
-                        <a class="btn dropdown-toggle" type="button"
-                        role="button" data-toggle="collapse" data-target="#contentId" aria-expanded="false"
-                                aria-controls="contentId">
+                        <a class="btn dropdown-toggle" type="button" role="button" data-toggle="collapse" data-target="#contentId" aria-expanded="false" aria-controls="contentId">
                             Options
                         </a>
                     </li>
@@ -73,14 +74,15 @@
                 </ul>
             </nav>
 
-            
+
 
             <article id="main-content__article" class="block__border-dashed">
                 <button id="btn-sidebar-toogle" type="button" class="btn btn-outline-dark">
                 <i class="fas fa-align-left"></i>
                 </button>
-                
-                <span class="align-self-center">Article</span></article>
+
+                <span class="align-self-center">Article</span>
+            </article>
         </section>
         <!-- <div>Ads</div> -->
         <footer class="block__border-dashed">Footer</footer>
