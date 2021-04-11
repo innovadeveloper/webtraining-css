@@ -127,6 +127,8 @@ footer {
     top: 15%;
     height: 70%;
     background-repeat: no-repeat;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 
