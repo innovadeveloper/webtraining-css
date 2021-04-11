@@ -3,8 +3,8 @@
 @import 'utils';
 $fontDescriptionColor: black;
 $fontTitleColor: red;
-$colorPrimary : rgba(203, 0, 222, 0.961);
-$darkColorPrimary : rgba(83, 0, 91, 0.961);
+$colorPrimary: rgba(203, 0, 222, 0.961);
+$darkColorPrimary: rgba(83, 0, 91, 0.961);
 * {
     box-sizing: border-box;
 }
@@ -32,11 +32,9 @@ header {
     flex-direction: row;
 }
 
-
 // variables navbar
-$sideBarCollapsedWidth: 100px;
-$sideBarOpenedWidth: 250px;
-
+$sideBarCollapsedWidth: 80px;
+$sideBarOpenedWidth: 200px;
 #main-content__sidebar {
     // @include content-center();
     height: 100%;
@@ -45,6 +43,20 @@ $sideBarOpenedWidth: 250px;
     transition: all 0.3s;
     overflow: hidden;
     position: relative;
+    & ul li a {
+        text-align: left;
+        // width: 100%;
+        width: $sideBarCollapsedWidth;
+        min-width: $sideBarCollapsedWidth;
+    }
+
+    i.arrow-toggle {
+        display: block;
+        position: relative;
+        left: 50%;
+        overflow: hidden
+    }
+    
     // float: left;
     #btn-sidebar-collapser {
         // display: block;
@@ -52,13 +64,13 @@ $sideBarOpenedWidth: 250px;
         // bottom: 1rem;
         // right: 1rem;
     }
-    #div-sidebar-collapser{
+    #div-sidebar-collapser {
         display: block;
         width: 100%;
         position: absolute;
         bottom: 1rem;
     }
-    &.active{
+    &.active {
         width: 0px;
         min-width: 0px;
     }
@@ -76,8 +88,7 @@ $sideBarOpenedWidth: 250px;
         top: 1rem;
         left: 1rem;
     }
-    #div
-    &.active{
+    #div &.active {
         width: 100%;
     }
 }
@@ -103,9 +114,7 @@ footer {
     }
 }
 
-
 // width: calc(100% - #{$sidebarWidth});
-
 @media only screen and (min-width: $desktopSize) {
     body {
         // background-color: rgb(106, 103, 255);
@@ -128,10 +137,28 @@ footer {
             // bottom: 1rem;
             // right: 1rem;
         }
-        &.active{
+        i.arrow-toggle {
+            display: inline;
+            // position: absolute;
+            right: 10px;
+            // border: 1px solid black;
+        }
+        & ul li a {
+            width: 100%;
+        }
+        &.active {
+            & ul li a {
+                width: $sideBarCollapsedWidth;
+                min-width: $sideBarCollapsedWidth;
+            }
             width: $sideBarCollapsedWidth;
             min-width: $sideBarCollapsedWidth;
-            // margin-left: -10%;
+            i.arrow-toggle {
+                display: block;
+                position: relative;
+                left: 50%;
+                overflow: hidden
+            }
         }
     }
     #main-content__article {
@@ -146,7 +173,7 @@ footer {
             top: 1rem;
             left: 1rem;
         }
-        &.active{
+        &.active {
             width: calc(100% - #{$sideBarCollapsedWidth});
             min-width: calc(100% - #{$sideBarCollapsedWidth});
         }

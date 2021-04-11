@@ -79,12 +79,25 @@ header {
 
 #main-content__sidebar {
   height: 100%;
-  width: 100px;
-  min-width: 100px;
+  width: 80px;
+  min-width: 80px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   overflow: hidden;
   position: relative;
+}
+
+#main-content__sidebar ul li a {
+  text-align: left;
+  width: 80px;
+  min-width: 80px;
+}
+
+#main-content__sidebar i.arrow-toggle {
+  display: block;
+  position: relative;
+  left: 50%;
+  overflow: hidden;
 }
 
 #main-content__sidebar #div-sidebar-collapser {
@@ -110,8 +123,8 @@ header {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  width: calc(100% - 100px);
-  min-width: calc(100% - 100px);
+  width: calc(100% - 80px);
+  min-width: calc(100% - 80px);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -123,8 +136,7 @@ header {
   left: 1rem;
 }
 
-#div
-#main-content__article.active {
+#div #main-content__article.active {
   width: 100%;
 }
 
@@ -156,15 +168,32 @@ footer {
   }
   #main-content__sidebar {
     height: 100%;
-    width: 250px;
-    min-width: 250px;
+    width: 200px;
+    min-width: 200px;
     position: relative;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
+  #main-content__sidebar i.arrow-toggle {
+    display: inline;
+    right: 10px;
+  }
+  #main-content__sidebar ul li a {
+    width: 100%;
+  }
   #main-content__sidebar.active {
-    width: 100px;
-    min-width: 100px;
+    width: 80px;
+    min-width: 80px;
+  }
+  #main-content__sidebar.active ul li a {
+    width: 80px;
+    min-width: 80px;
+  }
+  #main-content__sidebar.active i.arrow-toggle {
+    display: block;
+    position: relative;
+    left: 50%;
+    overflow: hidden;
   }
   #main-content__article {
     display: -webkit-box;
@@ -177,8 +206,8 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     position: relative;
-    width: calc(100% - 250px);
-    min-width: calc(100% - 250px);
+    width: calc(100% - 200px);
+    min-width: calc(100% - 200px);
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
@@ -189,8 +218,8 @@ footer {
     left: 1rem;
   }
   #main-content__article.active {
-    width: calc(100% - 100px);
-    min-width: calc(100% - 100px);
+    width: calc(100% - 80px);
+    min-width: calc(100% - 80px);
   }
 }
 /*# sourceMappingURL=dashboard_theme.css.map */
