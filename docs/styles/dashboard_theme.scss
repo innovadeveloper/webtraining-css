@@ -88,9 +88,11 @@ $sideBarOpenedWidth: 200px;
         top: 1rem;
         left: 1rem;
     }
-    #div &.active {
+    &.active {
         width: 100%;
     }
+
+    
 }
 
 footer {
