@@ -1,0 +1,108 @@
+// ----------------------------------------
+// ----------------------------------------
+// Templates SCSS
+// ----------------------------------------
+// ----------------------------------------
+.block {
+    // styles for .block
+    &__element {
+        // styles for .block__element
+        &--modifier {
+            // styles for .block__element--modifier
+        }
+    }
+    &--modifier {
+        // styles for .block--modifier
+    }
+}
+
+// ----------------------------------------
+// ----------------------------------------
+// Component With A Modifier
+// ----------------------------------------
+// ----------------------------------------
+// <button class="btn btn--secondary"></button>
+.btn {
+    display: inline-block;
+    color: blue;
+}
+
+.btn--secondary {
+    color: green;
+}
+
+// ----------------------------------------
+// ----------------------------------------
+// Component With Elements
+// ----------------------------------------
+// ----------------------------------------
+// <figure class="photo">
+//   <img class="photo__img" src="me.jpg">
+//   <figcaption class="photo__caption">Look at me!</figcaption>
+// </figure>
+.photo {
+    .photo__img {}
+    /* Specificity of 10 */
+    .photo__caption {}
+    /* Specificity of 10 */
+}
+
+// <figure class="photo">
+//   <img class="photo__img" src="me.jpg">
+//   <figcaption class="photo__caption">
+//     <blockquote class="photo__quote">
+//       Look at me!
+//     </blockquote>
+//   </figcaption>
+// </figure>
+.photo {
+    .photo__img {}
+    .photo__caption {
+        .photo__quote {}
+        // optional inside or nested
+    }
+}
+
+// ----------------------------------------
+// ----------------------------------------
+//  Element With Modifier
+// ----------------------------------------
+// ----------------------------------------
+//  <figure class="photo">
+//   <img class="photo__img photo__img--framed" src="me.jpg">
+//   <figcaption class="photo__caption photo__caption--large">Look at me!</figcaption>
+// </figure>
+.photo {
+    .photo__img--framed {}
+    .photo__caption--large {}
+}
+
+// ----------------------------------------
+// ----------------------------------------
+//  Style Elements Based on the Component Modifier
+// ----------------------------------------
+// ----------------------------------------
+// <figure class="photo photo--highlighted">
+//   <img class="photo__img" src="me.jpg">
+//   <figcaption class="photo__caption">Look at me!</figcaption>
+// </figure>
+.photo--highlighted {
+    .photo__img {}
+    .photo__caption {}
+}
+
+
+// ----------------------------------------
+// ----------------------------------------
+// Blocks in Blocks
+// ----------------------------------------
+// ----------------------------------------
+
+// <div class="block">
+//   <div class="block__element-one">...</div>
+//   <div class="block__new-block">
+//     <div class="new-block">
+//       <div class="new-block__element">...</div>
+//     </div>
+//   </div>
+// </div>

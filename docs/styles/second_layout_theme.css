@@ -60,6 +60,10 @@ body {
 }
 
 header {
+  height: 60px;
+}
+
+header--center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69,7 +73,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 60px;
 }
 
 .main-content__structure {
@@ -97,6 +100,11 @@ header {
 }
 
 #main-content__sidebar {
+  height: 60px;
+  width: 100%;
+}
+
+#main-content__sidebar--center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,8 +114,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 60px;
-  width: 100%;
 }
 
 #main-content__sidebar #btn-sidebar-collapser {
@@ -115,6 +121,11 @@ header {
 }
 
 #main-content__article {
+  width: 100%;
+  height: 100%;
+}
+
+#main-content__article--center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,8 +135,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  height: 100%;
 }
 
 #main-content__article #btn-sidebar-toogle {
@@ -133,6 +142,10 @@ header {
 }
 
 footer {
+  height: 60px;
+}
+
+footer--center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,7 +155,6 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 60px;
 }
 
 @media only screen and (min-width: 992px) {
@@ -159,6 +171,13 @@ footer {
             flex-direction: row;
   }
   #main-content__sidebar {
+    height: 100%;
+    width: 20%;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #main-content__sidebar--center {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -168,11 +187,6 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 100%;
-    width: 20%;
-    position: relative;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
   }
   #main-content__sidebar #btn-sidebar-collapser {
     display: block;
@@ -184,6 +198,12 @@ footer {
     margin-left: -20%;
   }
   #main-content__article {
+    position: relative;
+    width: 80%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #main-content__article--center {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -193,10 +213,6 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    position: relative;
-    width: 80%;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
   }
   #main-content__article #btn-sidebar-toogle {
     display: block;

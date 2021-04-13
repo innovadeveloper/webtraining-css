@@ -1,6 +1,8 @@
 // utilities
 $colorPrimary: rgba(203, 0, 222, 0.961);
 $colorSecondary: rgba(83, 0, 91, 0.961);
+$colorPrimary: rgba(203, 0, 222, 0.961);
+$darkColorPrimary: rgba(83, 0, 91, 0.961);
 
 
 * {
@@ -10,6 +12,9 @@ $colorSecondary: rgba(83, 0, 91, 0.961);
 body {
     font-size: 16px;
     font-family: $caviarDream;
+    // @include most-outer-selector('.bold') {
+    //   font-weight: bold;
+    // }
 }
 
 
@@ -32,9 +37,11 @@ body {
 
 // start modifiers for borders
 @mixin content-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    &--center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @mixin border-dashed {
@@ -47,6 +54,23 @@ body {
 *[border-dashed="true"] {
     border: 2px solid $colorPrimary;
     @include border-dashed();
+}
+
+@mixin dark-theme {
+    &--dark {
+        // styles for .block--modifier
+        background-color: $darkColorPrimary;
+        color: $fontDescriptionDarkColor
+    }
+}
+
+@mixin themes--colors {
+    *{
+        &[class*="--dark"]{
+            background-color: $darkColorPrimary;
+            color: $fontDescriptionDarkColor
+        }
+    }
 }
 // end modifiers for borders
 

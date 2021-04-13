@@ -49,21 +49,19 @@ body {
   left: auto;
 }
 
-#header, .header {
+#header,
+.header {
   height: 60px;
 }
 
-#header--dashed, .header--dashed {
+#header--dashed,
+.header--dashed {
   border: 2px solid rgba(203, 0, 222, 0.961);
   border-style: dashed;
 }
 
-#header--dark, .header--dark {
-  background-color: rgba(83, 0, 91, 0.961);
-  color: white;
-}
-
-#header--center, .header--center {
+#header--center,
+.header--center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,6 +71,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#header--dark,
+.header--dark {
+  background-color: rgba(83, 0, 91, 0.961);
+  color: white;
 }
 
 #content {
@@ -99,7 +103,8 @@ body {
           flex-direction: row;
 }
 
-#sidebar, .sidebar {
+#sidebar,
+.sidebar {
   height: 100%;
   width: 80px;
   min-width: 80px;
@@ -109,25 +114,29 @@ body {
   position: relative;
 }
 
-#sidebar--dashed, .sidebar--dashed {
+#sidebar--dashed,
+.sidebar--dashed {
   border: 2px solid rgba(203, 0, 222, 0.961);
   border-style: dashed;
 }
 
-#sidebar ul li a, .sidebar ul li a {
+#sidebar ul li a,
+.sidebar ul li a {
   text-align: left;
   width: 80px;
   min-width: 80px;
 }
 
-#sidebar ul li a i.arrow-toggle, .sidebar ul li a i.arrow-toggle {
+#sidebar ul li a i.arrow-toggle,
+.sidebar ul li a i.arrow-toggle {
   display: block;
   position: relative;
   left: 50%;
   overflow: hidden;
 }
 
-#sidebar .collapser, .sidebar .collapser {
+#sidebar .collapser,
+.sidebar .collapser {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,30 +145,25 @@ body {
   bottom: 1rem;
 }
 
-#sidebar .collapser--dashed, .sidebar .collapser--dashed {
+#sidebar .collapser--dashed,
+.sidebar .collapser--dashed {
   border: 2px solid rgba(203, 0, 222, 0.961);
   border-style: dashed;
 }
 
-#sidebar .collapser__button, .sidebar .collapser__button {
+#sidebar .collapser__button,
+.sidebar .collapser__button {
   margin: 0px auto;
 }
 
-#sidebar.active, .sidebar.active {
+#sidebar.active,
+.sidebar.active {
   width: 0px;
   min-width: 0px;
 }
 
-#main-content__article {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+#body-content,
+.body-content {
   position: relative;
   width: calc(100% - 80px);
   min-width: calc(100% - 80px);
@@ -167,18 +171,14 @@ body {
   transition: all 0.3s;
 }
 
-#main-content__article #btn-sidebar-toogle {
-  display: block;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+#body-content--dashed,
+.body-content--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
 }
 
-#main-content__article.active {
-  width: 100%;
-}
-
-footer {
+#body-content--center,
+.body-content--center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,11 +188,48 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#body-content #btn-sidebar-toogle,
+.body-content #btn-sidebar-toogle {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+#body-content.active,
+.body-content.active {
+  width: 100%;
+}
+
+footer,
+.footer {
   height: 60px;
 }
 
+footer--dashed,
+.footer--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
+}
+
+footer--center,
+.footer--center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media only screen and (min-width: 992px) {
-  #sidebar, .sidebar {
+  #sidebar,
+  .sidebar {
     height: 100%;
     width: 200px;
     min-width: 200px;
@@ -200,29 +237,53 @@ footer {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
-  #sidebar ul li a, .sidebar ul li a {
+  #sidebar ul li a,
+  .sidebar ul li a {
     width: 100%;
   }
-  #sidebar ul li a i.arrow-toggle, .sidebar ul li a i.arrow-toggle {
+  #sidebar ul li a i.arrow-toggle,
+  .sidebar ul li a i.arrow-toggle {
     position: relative;
     display: inline;
     right: 10px;
   }
-  #sidebar.active, .sidebar.active {
+  #sidebar.active,
+  .sidebar.active {
     width: 80px;
     min-width: 80px;
   }
-  #sidebar.active ul li a, .sidebar.active ul li a {
+  #sidebar.active ul li a,
+  .sidebar.active ul li a {
     width: 80px;
     min-width: 80px;
   }
-  #sidebar.active ul li a i.arrow-toggle, .sidebar.active ul li a i.arrow-toggle {
+  #sidebar.active ul li a i.arrow-toggle,
+  .sidebar.active ul li a i.arrow-toggle {
     display: block;
     position: relative;
     left: 50%;
     overflow: hidden;
   }
-  #main-content__article {
+  #body-content,
+  .body-content {
+    position: relative;
+    width: calc(100% - 200px);
+    min-width: calc(100% - 200px);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #body-content--dark,
+  .body-content--dark {
+    background-color: rgba(83, 0, 91, 0.961);
+    color: white;
+  }
+  #body-content--dashed,
+  .body-content--dashed {
+    border: 2px solid rgba(203, 0, 222, 0.961);
+    border-style: dashed;
+  }
+  #body-content--center,
+  .body-content--center {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -232,19 +293,16 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    position: relative;
-    width: calc(100% - 200px);
-    min-width: calc(100% - 200px);
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
   }
-  #main-content__article #btn-sidebar-toogle {
+  #body-content #btn-sidebar-toogle,
+  .body-content #btn-sidebar-toogle {
     display: block;
     position: absolute;
     top: 1rem;
     left: 1rem;
   }
-  #main-content__article.active {
+  #body-content.active,
+  .body-content.active {
     width: calc(100% - 80px);
     min-width: calc(100% - 80px);
   }

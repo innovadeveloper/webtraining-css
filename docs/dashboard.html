@@ -75,18 +75,16 @@
                 </ul>
             </nav>
 
-
-
-            <article id="main-content__article" class="block__border-dashed">
+            <article id="body-content" class="body-content body-content--center body-content--dashed">
                 <button id="btn-sidebar-toogle" type="button" class="btn btn-outline-dark">
                 <i class="fas fa-align-left"></i>
                 </button>
 
-                <span class="align-self-center">Article</span>
+                <span>Article</span>
             </article>
         </section>
         <!-- <div>Ads</div> -->
-        <footer class="block__border-dashed">Footer</footer>
+        <footer class="footer--dashed footer--center">Footer</footer>
     </div>
 
 
@@ -96,14 +94,14 @@
             $('#btn-sidebar-collapser').on('click', function() {
                 // $('.overlay').removeClass('active');
                 $('.sidebar').addClass('active');
-                $('#main-content__article').addClass('active');
+                $('#body-content').addClass('active');
                 console.log("click");
             });
 
             $('#btn-sidebar-toogle').on('click', function() {
                 // $('#sidebar').toggleClass('active');
                 $('.sidebar').toggleClass('active');
-                $('#main-content__article').toggleClass('active');
+                $('#body-content').toggleClass('active');
                 console.log("click");
             });
         });

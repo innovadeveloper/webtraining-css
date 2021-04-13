@@ -3,24 +3,13 @@
 @import 'utils';
 $fontDescriptionColor: black;
 $fontDescriptionDarkColor: rgb(255, 255, 255);
-$fontTitleColor: red;
-$colorPrimary: rgba(203, 0, 222, 0.961);
-$darkColorPrimary: rgba(83, 0, 91, 0.961);
-.block {
-    // styles for .block
-    &__element {
-        // styles for .block__element
-        &--modifier {
-            // styles for .block__element--modifier
-        }
-    }
-    &--modifier {
-        // styles for .block--modifier
-    }
-}
 
-#header, .header {
+
+#header,
+.header {
     @include border-dashed();
+    @include content-center();
+    @include dark-theme();
     // styles for .block
     height: 60px;
     // &__title {
@@ -35,14 +24,6 @@ $darkColorPrimary: rgba(83, 0, 91, 0.961);
     //         // styles for .block__element--modifier
     //     }
     // }
-    &--dark {
-        // styles for .block--modifier
-        background-color: $darkColorPrimary;
-        color: $fontDescriptionDarkColor
-    }
-    &--center {
-        @include content-center();
-    }
 }
 
 #content {
@@ -61,7 +42,8 @@ $darkColorPrimary: rgba(83, 0, 91, 0.961);
 // variables navbar
 $sideBarCollapsedWidth: 80px;
 $sideBarOpenedWidth: 200px;
-#sidebar, .sidebar{
+#sidebar,
+.sidebar {
     @include border-dashed();
     // @include content-center();
     height: 100%;
@@ -82,26 +64,25 @@ $sideBarOpenedWidth: 200px;
             overflow: hidden
         }
     }
-    
-    .collapser{
+    .collapser {
         @include border-dashed();
-        display: flex;  // ¿? flex align in the center by default..
+        display: flex; // ¿? flex align in the center by default..
         width: 100%;
         position: absolute;
         bottom: 1rem;
-        &__button{
+        &__button {
             margin: 0px auto;
         }
     }
-
     &.active {
         width: 0px;
         min-width: 0px;
     }
 }
 
-
-#main-content__article {
+#body-content,
+.body-content {
+    @include border-dashed();
     @include content-center();
     position: relative;
     width: calc(100% - #{$sideBarCollapsedWidth});
@@ -118,7 +99,9 @@ $sideBarOpenedWidth: 200px;
     }
 }
 
-footer {
+footer,
+.footer {
+    @include border-dashed();
     @include content-center();
     height: 60px;
 }
@@ -145,12 +128,8 @@ footer {
         // background-color: rgb(106, 103, 255);
     }
     // sidebar and article content
-    .main-content {
-        // flex-grow: 1;
-        // display: flex;
-        // flex-direction: row;
-    }
-    #sidebar, .sidebar {
+    #sidebar,
+    .sidebar {
         // @include content-center();
         height: 100%;
         width: $sideBarOpenedWidth;
@@ -180,7 +159,11 @@ footer {
             min-width: $sideBarCollapsedWidth;
         }
     }
-    #main-content__article {
+
+    #body-content,
+    .body-content {
+        @include dark-theme();
+        @include border-dashed();
         @include content-center();
         position: relative;
         width: calc(100% - #{$sideBarOpenedWidth});
