@@ -4,6 +4,12 @@
 $fontDescriptionColor: black;
 $fontDescriptionDarkColor: rgb(255, 255, 255);
 
+// @include themes--colors();
+// *[class*="--green"]{
+//     background-color: $darkColorPrimary;
+//     color: $fontDescriptionDarkColor
+// }
+
 
 #header,
 .header {

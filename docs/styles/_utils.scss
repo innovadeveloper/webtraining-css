@@ -64,13 +64,19 @@ body {
     }
 }
 
-@mixin themes--colors {
-    *{
-        &[class*="--dark"]{
-            background-color: $darkColorPrimary;
-            color: $fontDescriptionDarkColor
-        }
-    }
+@mixin themes--colors{
+    // *{
+    //     &[class*="--dark"]{
+    //         background-color: $darkColorPrimary;
+    //         color: $fontDescriptionDarkColor
+    //     }
+    // }
+
+    // *[class*="--green"]{
+    //     background-color: $darkColorPrimary;
+    //     color: $fontDescriptionDarkColor
+    // }
+
 }
 // end modifiers for borders
 
