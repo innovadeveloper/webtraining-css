@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "Una pequeña pero muy útil librería que servirá para proveer el acceso a ciertas funciones internas y propias del dispositivo. Simples documentos web creados con html y sass. Ademàs de ello, se implementò algunos frameworks/librerìas como : BootstrapV5, FontAwesome, PopperJS",
   "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack --mode production --config webpack.config.js"
   },
   "repository": {
     "type": "git",
