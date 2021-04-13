@@ -8,6 +8,16 @@
   src: url(../assets/fonts/caviar_dreams/CaviarDreams_Bold.ttf);
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: CaviarDream;
+}
+
 .block__border-dashed {
   border: 2px solid rebeccapurple;
   border-style: dashed;
@@ -25,22 +35,35 @@
   border: 1px solid lightgray;
 }
 
+*[border-dashed="true"] {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+}
+
+*[border-dashed="true"]--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
+}
+
 .nav-header__dropdown-right {
   right: 0px;
   left: auto;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+#header, .header {
+  height: 60px;
 }
 
-body {
-  font-size: 16px;
-  font-family: CaviarDream;
+#header--dashed, .header--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
 }
 
-header {
+#header--dark, .header--dark {
+  background-color: rgba(83, 0, 91, 0.961);
+  color: white;
+}
+
+#header--center, .header--center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,10 +73,9 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 60px;
 }
 
-.main-content__structure {
+#content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,7 +86,7 @@ header {
   height: 100vh;
 }
 
-.main-content__body-section {
+.main-content {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -77,7 +99,7 @@ header {
           flex-direction: row;
 }
 
-#main-content__sidebar {
+#sidebar, .sidebar {
   height: 100%;
   width: 80px;
   min-width: 80px;
@@ -87,27 +109,43 @@ header {
   position: relative;
 }
 
-#main-content__sidebar ul li a {
+#sidebar--dashed, .sidebar--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
+}
+
+#sidebar ul li a, .sidebar ul li a {
   text-align: left;
   width: 80px;
   min-width: 80px;
 }
 
-#main-content__sidebar i.arrow-toggle {
+#sidebar ul li a i.arrow-toggle, .sidebar ul li a i.arrow-toggle {
   display: block;
   position: relative;
   left: 50%;
   overflow: hidden;
 }
 
-#main-content__sidebar #div-sidebar-collapser {
-  display: block;
+#sidebar .collapser, .sidebar .collapser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   position: absolute;
   bottom: 1rem;
 }
 
-#main-content__sidebar.active {
+#sidebar .collapser--dashed, .sidebar .collapser--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
+}
+
+#sidebar .collapser__button, .sidebar .collapser__button {
+  margin: 0px auto;
+}
+
+#sidebar.active, .sidebar.active {
   width: 0px;
   min-width: 0px;
 }
@@ -154,19 +192,7 @@ footer {
 }
 
 @media only screen and (min-width: 992px) {
-  .main-content__body-section {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  #main-content__sidebar {
+  #sidebar, .sidebar {
     height: 100%;
     width: 200px;
     min-width: 200px;
@@ -174,22 +200,23 @@ footer {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
-  #main-content__sidebar i.arrow-toggle {
+  #sidebar ul li a, .sidebar ul li a {
+    width: 100%;
+  }
+  #sidebar ul li a i.arrow-toggle, .sidebar ul li a i.arrow-toggle {
+    position: relative;
     display: inline;
     right: 10px;
   }
-  #main-content__sidebar ul li a {
-    width: 100%;
-  }
-  #main-content__sidebar.active {
+  #sidebar.active, .sidebar.active {
     width: 80px;
     min-width: 80px;
   }
-  #main-content__sidebar.active ul li a {
+  #sidebar.active ul li a, .sidebar.active ul li a {
     width: 80px;
     min-width: 80px;
   }
-  #main-content__sidebar.active i.arrow-toggle {
+  #sidebar.active ul li a i.arrow-toggle, .sidebar.active ul li a i.arrow-toggle {
     display: block;
     position: relative;
     left: 50%;

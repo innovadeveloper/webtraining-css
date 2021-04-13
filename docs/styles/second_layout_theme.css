@@ -8,6 +8,16 @@
   src: url(../assets/fonts/caviar_dreams/CaviarDreams_Bold.ttf);
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: CaviarDream;
+}
+
 .block__border-dashed {
   border: 2px solid rebeccapurple;
   border-style: dashed;
@@ -23,6 +33,15 @@
 
 .block__border-graylight {
   border: 1px solid lightgray;
+}
+
+*[border-dashed="true"] {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+}
+
+*[border-dashed="true"]--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
 }
 
 .nav-header__dropdown-right {

@@ -24,34 +24,31 @@
 </head>
 
 <body>
-    <div class="container-fluid main-content__structure">
-        <header class="block__border-dashed">Header</header>
+    <div id="content" class="container-fluid">
+        <header class="header header--center header--dashed">Header</header>
         <!-- body section : navbar and main_article -->
-        <section class="main-content__body-section">
-            <nav id="main-content__sidebar" class="block__border-dashed">
-                <div id="div-sidebar-collapser" class="d-flex justify-content-center">
-                    <button id="btn-sidebar-collapser" type="button" class="btn btn-outline-dark mx-auto">
+        <!-- <section class="main-content__body"> -->
+        <section class="main-content">
+            <nav class="sidebar sidebar--dashed">
+                <div class="collapser">
+                    <button id="btn-sidebar-collapser" type="button" class="btn btn-outline-dark collapser__button">
                         <i class="fas fa-angle-left"></i>
                     </button>
                 </div>
 
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Disabled link</a>
-                    </li> -->
-
                     <!-- 
                         b4.collapse-default :
                          - change id
                      -->
                     <li>
-                        <a class="position-relative btn border border-danger" type="button" role="button" data-toggle="collapse" data-target="#contentId" aria-expanded="false" aria-controls="contentId">
+                        <a class="position-relative nav-link" type="button" role="button" data-toggle="collapse" data-target="#contentId" aria-expanded="false" aria-controls="contentId">
                             Services
                             <i class="fa fa-caret-down arrow-toggle"></i>
                         </a>
@@ -98,14 +95,14 @@
         $(document).ready(function() {
             $('#btn-sidebar-collapser').on('click', function() {
                 // $('.overlay').removeClass('active');
-                $('#main-content__sidebar').addClass('active');
+                $('.sidebar').addClass('active');
                 $('#main-content__article').addClass('active');
                 console.log("click");
             });
 
             $('#btn-sidebar-toogle').on('click', function() {
                 // $('#sidebar').toggleClass('active');
-                $('#main-content__sidebar').toggleClass('active');
+                $('.sidebar').toggleClass('active');
                 $('#main-content__article').toggleClass('active');
                 console.log("click");
             });

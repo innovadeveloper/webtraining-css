@@ -1,4 +1,18 @@
 // utilities
+$colorPrimary: rgba(203, 0, 222, 0.961);
+$colorSecondary: rgba(83, 0, 91, 0.961);
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: $caviarDream;
+}
+
+
 .block__border-dashed {
     border: 2px solid rebeccapurple;
     border-style: dashed;
@@ -16,11 +30,27 @@
     border: 1px solid lightgray;
 }
 
+// start modifiers for borders
 @mixin content-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+@mixin border-dashed {
+    &--dashed{
+        border: 2px solid $colorPrimary;
+        border-style: dashed
+    }
+}
+
+*[border-dashed="true"] {
+    border: 2px solid $colorPrimary;
+    @include border-dashed();
+}
+// end modifiers for borders
+
+
 
 .nav-header__dropdown-right{
     right: 0px;
