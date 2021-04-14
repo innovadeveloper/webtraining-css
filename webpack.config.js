@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
@@ -33,8 +34,8 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [
-                  // { loader: MiniCssExtractPlugin.loader, },
-                  // { loader: 'css-loader' },
+                    // { loader: MiniCssExtractPlugin.loader, },
+                    // { loader: 'css-loader' },
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                 ]
@@ -48,17 +49,23 @@ module.exports = {
             filename: './index.html' // NOMBRE FINAL DEL ARCHIVO
         }),
         new MiniCssExtractPlugin({
-          filename: '[name].css',
+            filename: '[name].css',
+        }),
+        new CopyPlugin({
+            patterns: [{
+                from: path.resolve(__dirname, "src", "assets/pictures"),
+                to: "assets/pictures"
+            }]
         }),
     ],
     stats: {
-      assets: true,
-      children: true,
-      // chunks: false,
-      // errors: true,
-      // errorDetails: true,
-      // modules: false,
-      // timings: true,
-      // colors: true
-  }
+        assets: true,
+        children: true,
+        // chunks: false,
+        // errors: true,
+        // errorDetails: true,
+        // modules: false,
+        // timings: true,
+        // colors: true
+    }
 }
