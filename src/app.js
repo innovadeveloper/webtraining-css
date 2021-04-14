@@ -1,5 +1,6 @@
 import { AlertWeb } from './js/alert.js';
 import './styles/theme.css';
+import photo from './assets/pictures/person_photo@2x.png';  
 
 $( document ).ready(function() {
     

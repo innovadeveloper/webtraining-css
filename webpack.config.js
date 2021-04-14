@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const { loader } = require('mini-css-extract-plugin');
 
 
 module.exports = {
@@ -13,7 +14,9 @@ module.exports = {
         // Con path.resolve podemos decir dónde va estar la carpeta y la ubicación del mismo
         path: path.resolve(__dirname, "dist"),
         // filename le pone el nombre al archivo final
-        filename: "main.js"
+        filename: "main.js",
+        assetModuleFilename: 'assets/pictures/[hash][ext][query]'   // para que las imàgenes hasheadas se almacenen en un path especìfico #2-assetsmodule
+        // assetModuleFilename: 'assets/pictures/[hash][ext]'  // para que las imàgenes hasheadas se almacenen en un path especìfico #2-assetsmodule
     },
     resolve: {
         // Aqui ponemos las extensiones que tendremos en nuestro proyecto para webpack los lea
@@ -34,11 +37,39 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [
-                    // { loader: MiniCssExtractPlugin.loader, },
-                    // { loader: 'css-loader' },
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                 ]
+            },
+            // loader para la importaciòn de imàgenes dentro del mismo js (util for react o vue js) #2-assetsmodule (no requiere alguna dependencia- webpack ya lo incluye)
+            {
+                test: /\.png/,
+                type: "asset/resource"
+            },
+            // loader para fuentes de tipo woff o woff2 (no requiere alguna dependencia- webpack ya lo incluye)
+            {
+                test: /\.(woff|woff2)$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000, // O LE PASAMOS UN BOOLEANOS TRUE O FALSE
+                        // Habilita o deshabilita la transformación de archivos en base64.
+                        mimetype: 'aplication/font-woff',
+                        // Especifica el tipo MIME con el que se alineará el archivo. 
+                        // Los MIME Types (Multipurpose Internet Mail Extensions)
+                        // son la manera standard de mandar contenido a través de la red.
+                        name: "[name].[ext]",
+                        // EL NOMBRE INICIAL DEL ARCHIVO + SU EXTENSIÓN
+                        // PUEDES AGREGARLE [name]hola.[ext] y el output del archivo seria 
+                        // ubuntu-regularhola.woff
+                        outputPath: './assets/fonts/',
+                        // EL DIRECTORIO DE SALIDA (SIN COMPLICACIONES)
+                        publicPath: './assets/fonts/',
+                        // EL DIRECTORIO PUBLICO (SIN COMPLICACIONES)
+                        esModule: false
+                            // AVISAR EXPLICITAMENTE SI ES UN MODULO
+                    }
+                }
             }
         ]
     },
