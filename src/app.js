@@ -1,5 +1,5 @@
 import { AlertWeb } from './js/alert.js';
-
+import './styles/theme.css';
 
 $( document ).ready(function() {
     
