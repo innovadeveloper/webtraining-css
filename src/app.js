@@ -14,7 +14,7 @@ const USER = process.env.USER_ACCOUNT;
 $( document ).ready(function() {
     console.log("=====.env ===");
     console.log("API : " + API);
-    console.log("USER ACCOUNT   : " + USER);
+    console.log("USER ACCOUNT xd   : " + USER);
     
     $('#btn-sidebar-collapser').on('click', function() {
         // $('.overlay').removeClass('active');

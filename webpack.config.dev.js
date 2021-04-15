@@ -20,6 +20,7 @@ module.exports = {
             // assetModuleFilename: 'assets/pictures/[hash][ext]'  // para que las imàgenes hasheadas se almacenen en un path especìfico #2-assetsmodule
     },
     mode: 'development',
+    devtool: 'source-map',  // es un mapeo que se realiza entre el código original y el código transformado, tanto para archivos JavaScript como para archivos CSS. => command + P (en el navegador para buscar la clase js y depurar)
     // watch: true,
     resolve: {
         // Aqui ponemos las extensiones que tendremos en nuestro proyecto para webpack los lea
