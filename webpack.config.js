@@ -2,7 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const { loader } = require('mini-css-extract-plugin');
+// const { loader } = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 
 module.exports = {
@@ -14,13 +16,19 @@ module.exports = {
         // Con path.resolve podemos decir dónde va estar la carpeta y la ubicación del mismo
         path: path.resolve(__dirname, "dist"),
         // filename le pone el nombre al archivo final
-        filename: "main.js",
-        assetModuleFilename: 'assets/pictures/[hash][ext][query]'   // para que las imàgenes hasheadas se almacenen en un path especìfico #2-assetsmodule
-        // assetModuleFilename: 'assets/pictures/[hash][ext]'  // para que las imàgenes hasheadas se almacenen en un path especìfico #2-assetsmodule
+        filename: "[name].[contenthash].js", // el hash nos indicarà si hay cambios en el build...
+        assetModuleFilename: 'assets/pictures/[hash][ext][query]' // para que las imàgenes hasheadas se almacenen en un path especìfico #2-assetsmodule
+            // assetModuleFilename: 'assets/pictures/[hash][ext]'  // para que las imàgenes hasheadas se almacenen en un path especìfico #2-assetsmodule
     },
     resolve: {
         // Aqui ponemos las extensiones que tendremos en nuestro proyecto para webpack los lea
-        extensions: [".js"]
+        extensions: [".js"],
+        alias: {
+            '@images': path.resolve(__dirname, 'src/assets/pictures/'),
+            '@styles': path.resolve(__dirname, 'src/styles/'),
+            // '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
+            '@templates': path.resolve(__dirname, '/public/'),
+        },
     },
     module: {
         // REGLAS PARA TRABAJAR CON WEBPACK (LOADERS)
@@ -63,9 +71,9 @@ module.exports = {
                         // PUEDES AGREGARLE [name]hola.[ext] y el output del archivo seria 
                         // ubuntu-regularhola.woff
                         outputPath: './assets/fonts/',
-                        // EL DIRECTORIO DE SALIDA (SIN COMPLICACIONES)
-                        publicPath: './assets/fonts/',
-                        // EL DIRECTORIO PUBLICO (SIN COMPLICACIONES)
+                        // EL DIRECTORIO DE SALIDA DONDE IRÀ EL RECURSO  
+                        publicPath: '../assets/fonts/',
+                        // EL DIRECTORIO PUBLICO O RAÌZ DEL BUNDLE 
                         esModule: false
                             // AVISAR EXPLICITAMENTE SI ES UN MODULO
                     }
@@ -80,7 +88,7 @@ module.exports = {
             filename: './index.html' // NOMBRE FINAL DEL ARCHIVO
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].css',
+            filename: 'assets/[name].[contenthash].css',
         }),
         new CopyPlugin({
             patterns: [{
@@ -89,6 +97,13 @@ module.exports = {
             }]
         }),
     ],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+            new TerserPlugin()
+        ]
+    },
     stats: {
         assets: true,
         children: true,
