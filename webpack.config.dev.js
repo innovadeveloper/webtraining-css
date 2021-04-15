@@ -3,10 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 // const { loader } = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -22,6 +19,7 @@ module.exports = {
         assetModuleFilename: 'assets/pictures/[hash][ext][query]' // para que las imàgenes hasheadas se almacenen en un path especìfico #2-assetsmodule
             // assetModuleFilename: 'assets/pictures/[hash][ext]'  // para que las imàgenes hasheadas se almacenen en un path especìfico #2-assetsmodule
     },
+    mode: 'development',
     resolve: {
         // Aqui ponemos las extensiones que tendremos en nuestro proyecto para webpack los lea
         extensions: [".js"],
@@ -101,16 +99,8 @@ module.exports = {
                 to: "assets/pictures"
             }]
         }),
-        new Dotenv(),
-        new CleanWebpackPlugin(),
+        new Dotenv()
     ],
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new CssMinimizerPlugin(),
-            new TerserPlugin()
-        ]
-    },
     stats: {
         assets: true,
         children: true,
