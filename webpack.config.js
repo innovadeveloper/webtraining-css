@@ -30,6 +30,7 @@ module.exports = {
             '@styles': path.resolve(__dirname, 'src/styles/'),
             // '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
             '@templates': path.resolve(__dirname, '/public/'),
+            '@fontawesomev5': path.resolve(__dirname, '/src/assets/fontawesome-free-5.15.3-web/css/'),
         },
     },
     module: {
@@ -53,7 +54,8 @@ module.exports = {
             },
             // loader para la importaciòn de imàgenes dentro del mismo js (util for react o vue js) #2-assetsmodule (no requiere alguna dependencia- webpack ya lo incluye)
             {
-                test: /\.png/,
+                // test: /\.png/,
+                test: /\.(png|svg|eot|ttf)$/,
                 type: "asset/resource"
             },
             // loader para fuentes de tipo woff o woff2 (no requiere alguna dependencia- webpack ya lo incluye)
@@ -99,6 +101,11 @@ module.exports = {
             patterns: [{
                 from: path.resolve(__dirname, "src", "assets/pictures"),
                 to: "assets/pictures"
+            },
+            {
+                from: path.resolve(__dirname, "src", "assets/fontawesome-free-5.15.3-web"),
+                to: "assets/fontawesome-free-5.15.3-web"
+                // to: "assets/fontawesome"
             }]
         }),
         new Dotenv(),
