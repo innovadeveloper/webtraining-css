@@ -72,13 +72,14 @@ module.exports = {
                         // ubuntu-regularhola.woff
                         outputPath: './assets/fonts/',
                         // EL DIRECTORIO DE SALIDA DONDE IRÀ EL RECURSO  
-                        publicPath: '../assets/fonts/',
+                        publicPath: '../assets/fonts/', // '..' porque el css se llevò a la carpeta assets con el plugin MiniCssExtractPlugin*
                         // EL DIRECTORIO PUBLICO O RAÌZ DEL BUNDLE 
                         esModule: false
                             // AVISAR EXPLICITAMENTE SI ES UN MODULO
                     }
                 }
-            }
+            },
+            
         ]
     },
     plugins: [
@@ -88,6 +89,7 @@ module.exports = {
             filename: './index.html' // NOMBRE FINAL DEL ARCHIVO
         }),
         new MiniCssExtractPlugin({
+            // filename: '[name].[contenthash].css',    // css en la raìz..
             filename: 'assets/[name].[contenthash].css',
         }),
         new CopyPlugin({
