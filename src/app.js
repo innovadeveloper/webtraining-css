@@ -4,10 +4,14 @@ import '@styles/theme.css'
 import photo from '@images/person_photo@2x.png'
 // import photo from './assets/pictures/person_photo@2x.png';  
 
-$( document ).ready(function() {
-    
-    console.log("document ready..");
+const API = process.env.API;
+const USER = process.env.USER_ACCOUNT;
 
+$( document ).ready(function() {
+    console.log("=====.env ===");
+    console.log("API : " + API);
+    console.log("USER ACCOUNT : " + USER);
+    
     $('#btn-sidebar-collapser').on('click', function() {
         // $('.overlay').removeClass('active');
         $('.sidebar').addClass('active');

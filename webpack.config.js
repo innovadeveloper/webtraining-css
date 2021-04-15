@@ -5,6 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 // const { loader } = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 
 module.exports = {
@@ -84,7 +85,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({ // CONFIGURACIÓN DEL PLUGIN
-            inject: true, // INYECTA EL BUNDLE AL TEMPLATE HTML   default true ... true || 'head' || 'body' || false
+            // inject: true, // INYECTA EL BUNDLE AL TEMPLATE HTML   default true ... true || 'head' || 'body' || false
+            inject: 'body', // INYECTA EL BUNDLE AL TEMPLATE HTML   default true ... true || 'head' || 'body' || false
             template: './public/index.html', // LA RUTA AL TEMPLATE HTML
             filename: './index.html' // NOMBRE FINAL DEL ARCHIVO
         }),
@@ -98,6 +100,7 @@ module.exports = {
                 to: "assets/pictures"
             }]
         }),
+        new Dotenv()
     ],
     optimization: {
         minimize: true,
